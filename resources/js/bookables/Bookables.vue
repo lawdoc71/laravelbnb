@@ -4,9 +4,9 @@
     <div v-else>
       <div class="row mb-4" v-for="row in rows" :key="'row' + row">
         <div
-          class="col d-flex align-items-stretch"
-          v-for="(bookable, column) in bookablesInRow(row)"
-          :key="'row' + row + column"
+            class="col d-flex align-items-stretch"
+            v-for="(bookable, column) in bookablesInRow(row)"
+            :key="'row' + row + column"
         >
           <bookable-list-item v-bind="bookable"></bookable-list-item>
         </div>
@@ -48,8 +48,8 @@ export default {
   created() {
     this.loading = true;
     const request = axios.get("/api/bookables").then(response => {
-      this.bookables = response.data.data;
-      this.loading = false;
+        this.bookables = response.data.data;
+        this.loading = false;
     });
   }
 };
